@@ -43,7 +43,7 @@ public interface Cache<K, V> {
 }
 ```
 # 实现
-**这份代码的实现参考了jodd.cache包里的代码**<br>~~几乎写的一模一样~~
+**这份代码的实现参考了jodd.cache包里的代码**<br>~~几乎和人家写的一模一样~~
 ## 抽象基础类实现
 ```java
 package cache;
