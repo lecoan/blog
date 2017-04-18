@@ -1,6 +1,7 @@
 ---
 title: 基本缓存算法 - java实现
-tag: algorithm
+tags: java
+categories: algorithm
 ---
 
 # 概述
@@ -43,7 +44,7 @@ public interface Cache<K, V> {
 }
 ```
 # 实现
-**这份代码的实现参考了jodd.cache包里的代码**<br>~~几乎和人家写的一模一样~~
+**这份代码的实现参考了jodd.cache包里的代码**<br>~~几乎和人家写的一模一样也好意思说参考？~~
 ## 抽象基础类实现
 ```java
 package cache;
@@ -152,18 +153,23 @@ public abstract class AbstractCache<K, V> implements Cache<K,V> {
 }
 
 ```
+
 ## FIFO
 ```java
+
 ```
 
 ## LRU
 ```java
+
 ```
 
 ## LFU
 ```java
+
 ```
 
 ## Random
 ```java
+
 ```
