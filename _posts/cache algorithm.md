@@ -18,9 +18,9 @@ categories: algorithm
 **注意Random Cache实际上的性能仅仅稍差于LFU和LRU**
 <!--more-->
 # 接口定义
+
 ```java
 package cache;
-
 /**
  * Created by lecoan on 17-4-17.
  */
@@ -43,9 +43,11 @@ public interface Cache<K, V> {
     void clear();
 }
 ```
+
 # 实现
 **这份代码的实现参考了jodd.cache包里的代码**<br>~~几乎和人家写的一模一样也好意思说参考？~~
 ## 抽象基础类实现
+
 ```java
 package cache;
 
@@ -151,7 +153,6 @@ public abstract class AbstractCache<K, V> implements Cache<K,V> {
         }
     }
 }
-
 ```
 
 ## FIFO
