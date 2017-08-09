@@ -14,6 +14,8 @@ struct list_head {
 };
 ```
 
+<!--readmore-->
+
 ## 使用方式
 
 先定义自己的数据结构，并将list_head嵌入

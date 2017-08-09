@@ -1,3 +1,11 @@
+---
+title: 编译内核及移植MPTCP过程
+tags: Linux MPTCP
+categories: Linux
+---
+
+
+
 # 编译内核及移植MPTCP过程
 
 ## 编译方式
@@ -10,6 +18,8 @@
 ## 编译过程
 
 这里我的电脑系统为Ubuntu16.04， 设备为树莓派3B
+
+<!--readmore-->
 
 ### 本地编译
 
