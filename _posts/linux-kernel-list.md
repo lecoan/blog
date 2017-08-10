@@ -14,7 +14,7 @@ struct list_head {
 };
 ```
 
-<!--readmore-->
+<!--more-->
 
 ## 使用方式
 

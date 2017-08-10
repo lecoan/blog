@@ -19,7 +19,7 @@ categories: Linux
 
 这里我的电脑系统为Ubuntu16.04， 设备为树莓派3B
 
-<!--readmore-->
+<!--more-->
 
 ### 本地编译
 
