@@ -27,6 +27,8 @@ Animation animation = AnimationUtils.loadAnimation(this,R.anim.scale);//载入xm
 mImageView.startAnimation(animation);//使对应的View执行动画
 ```
 
+<!--more-->
+
 ### 缩放动画
 
 ```

@@ -1,6 +1,8 @@
 ---
 title: Linux Kernel中的双向链表
-tags: Linux 数据结构
+tags:
+- Linux
+- 数据结构
 categories: Linux
 ---
 

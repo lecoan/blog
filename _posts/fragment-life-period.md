@@ -7,7 +7,8 @@ tags: Android
 # fragment的生命周期
 
 fragment是android3.0之后新引入的组件，能够嵌在Activity中使用，可以看成是轻型的Activity，因此Fragment也有他自己的生命周期。
-[![frgment生命周期](http://img.blog.csdn.net/20130513093815793)](http://img.blog.csdn.net/20130513093815793)frgment生命周期
+
+<!--more-->[![frgment生命周期](http://img.blog.csdn.net/20130513093815793)](http://img.blog.csdn.net/20130513093815793)frgment生命周期
 
 > - 创建部分
 >   1. **onAttach()**

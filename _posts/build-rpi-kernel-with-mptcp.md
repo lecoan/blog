@@ -1,6 +1,8 @@
 ---
 title: 编译内核及移植MPTCP过程
-tags: Linux MPTCP
+tags: 
+- Linux
+- MPTCP
 categories: Linux
 ---
 
