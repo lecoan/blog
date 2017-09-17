@@ -22,7 +22,7 @@ android里的动画可以分成四种基本类型
 
 现在res文件夹下新建anim文件夹，然后在该目录下用xml文件配置好动画效果之后，只需要在代码中写下如下语句
 
-```
+```java
 Animation animation = AnimationUtils.loadAnimation(this,R.anim.scale);//载入xml文件
 mImageView.startAnimation(animation);//使对应的View执行动画
 ```
@@ -31,7 +31,7 @@ mImageView.startAnimation(animation);//使对应的View执行动画
 
 ### 缩放动画
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -50,7 +50,7 @@ mImageView.startAnimation(animation);//使对应的View执行动画
 
 ### 透明度动画
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <alpha
@@ -62,7 +62,7 @@ mImageView.startAnimation(animation);//使对应的View执行动画
 
 ### 旋转动画
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <rotate
@@ -77,7 +77,7 @@ mImageView.startAnimation(animation);//使对应的View执行动画
 
 ### 位移动画
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <translate
@@ -93,7 +93,7 @@ mImageView.startAnimation(animation);//使对应的View执行动画
 
 这一部分和之间区别不大，只不过是把xml文件里的内容放到代码里而已，下面我用位移动画来举例，其他则不再赘述
 
-```
+```java
 Animation animation = new TranslateAnimation(-50,50,0,0);
 animation.setDuration(200);
 animation.setRepeatCount(Animation.INFINITE);
@@ -107,7 +107,7 @@ mImageView.startAnimation(animation);
 
 ### 通过设置动画的监听器来实现
 
-```
+```java
 animation = AnimationUtils.loadAnimation(this,R.anim.scale);
 final Animation animation1 = AnimationUtils.loadAnimation(this,R.anim.rotate);
 animation.setAnimationListener(new Animation.AnimationListener() {
@@ -126,7 +126,7 @@ mImageView.startAnimation(animation);
 
 ### 在xml文件里配置
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <alpha
@@ -151,7 +151,7 @@ mImageView.startAnimation(animation);
 这个也很简单，直接上代码
 zoom_in.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
      android:interpolator="@android:anim/decelerate_interpolator"
@@ -170,7 +170,7 @@ zoom_in.xml
 
 zoom_out.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
      android:interpolator="@android:anim/decelerate_interpolator"
@@ -184,7 +184,7 @@ zoom_out.xml
 
 在Activity中
 
-```
+```java
 Intent intent = new Intent(this,DemoActivity.class);
 startActivity(intent);
 //调用该方法覆盖系统的过度动画，需要传进activity退出和进入的配置
@@ -196,7 +196,7 @@ overridePendingTransition(R.anim.zoom_in,R.anim.zoom_out);
 
 布局动画是控制ViewGroup内的subView加载时的动画效果
 
-```
+```java
 Animation animation = AnimationUtils.loadAnimation(this,R.anim.rotate);
 LayoutAnimationController controller = new LayoutAnimationController(animation);
 controller.setOrder(LayoutAnimationController.ORDER_RANDOM);
