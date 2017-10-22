@@ -265,3 +265,77 @@ In the example above we used the in-memory channel layer implementation as our d
 
 ### Persisting Data
 
+Channels provides a `channel_session` decorator for this purpose - it provides you with an attribute called `message.channel_session` that acts just like a normal Django session.
+
+```python
+# In consumers.py
+import json
+from channels import Group
+from channels.sessions import channel_session
+from urllib.parse import parse_qs
+
+# Connected to websocket.connect
+@channel_session
+def ws_connect(message, room_name):
+    # Accept connection
+    message.reply_channel.send({"accept": True})
+    # Parse the query string
+    params = parse_qs(message.content["query_string"])
+    if b"username" in params:
+        # Set the username in the session
+        message.channel_session["username"] = params[b"username"][0].decode("utf8")
+        # Add the user to the room_name group
+        Group("chat-%s" % room_name).add(message.reply_channel)
+    else:
+        # Close the connection.
+        message.reply_channel.send({"close": True})
+
+# Connected to websocket.receive
+@channel_session
+def ws_message(message, room_name):
+    Group("chat-%s" % room_name).send({
+        "text": json.dumps({
+            "text": message["text"],
+            "username": message.channel_session["username"],
+        }),
+    })
+
+# Connected to websocket.disconnect
+@channel_session
+def ws_disconnect(message, room_name):
+    Group("chat-%s" % room_name).discard(message.reply_channel)
+```
+
+Update `routing.py` as well:
+
+```python
+# in routing.py
+from channels.routing import route
+from myapp.consumers import ws_connect, ws_message, ws_disconnect
+
+channel_routing = [
+    route("websocket.connect", ws_connect, path=r"^/(?P<room_name>[a-zA-Z0-9_]+)/$"),
+    route("websocket.receive", ws_message, path=r"^/(?P<room_name>[a-zA-Z0-9_]+)/$"),
+    route("websocket.disconnect", ws_disconnect, path=r"^/(?P<room_name>[a-zA-Z0-9_]+)/$"),
+]
+```
+
+### Authentication
+
+Handily, as WebSockets start off using the HTTP protocol, they have a lot of familiar features, including a path, GET parameters, and cookies. We’d like to use these to hook into the familiar Django session and authentication systems; after all, WebSockets are no good unless we can identify who they belong to and do things securely.
+
+### Security
+
+### Routing
+
+### Models
+
+### Enforcing Ordering
+
+Because Channels is a distributed system that can have many workers, by default it just processes messages in the order the workers get them off the queue. It’s entirely feasible for a WebSocket interface server to send out two `receive` messages close enough together that a second worker will pick up and start processing the second message before the first worker has finished processing the first.
+
+This is particularly annoying if you’re storing things in the session in the one consumer and trying to get them in the other consumer - because the `connect` consumer hasn’t exited, its session hasn’t saved. You’d get the same effect if someone tried to request a view before the login view had finished processing, of course, but HTTP requests usually come in a bit slower from clients.
+
+Channels has a solution - the `enforce_ordering` decorator. All WebSockets messages contain an `order` key, and this decorator uses that to make sure that messages are consumed in the right order. In addition, the `connect` message blocks the socket opening until it’s responded to, so you are always guaranteed that `connect` will run before any `receives` even without the decorator.
+
+There’s a high cost to using `enforce_ordering`, which is why it’s an optional decorator.
