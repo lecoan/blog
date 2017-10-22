@@ -74,7 +74,7 @@ sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 
 ## 交叉编译
 
-交叉编译相对负载一些，首先要先下载树莓派对应的交叉编译工具
+交叉编译相对复杂一些，首先要先下载树莓派对应的交叉编译工具
 
 ```bash
 git clone https://github.com/raspberrypi/tools
