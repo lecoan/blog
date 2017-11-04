@@ -1,3 +1,11 @@
+---
+title: Django认证系统
+date: 2017-10-10 11:47:14
+tags: 
+- Django
+- Python
+---
+
 # Django认证系统
 
 ## User对象

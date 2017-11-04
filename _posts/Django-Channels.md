@@ -1,3 +1,12 @@
+---
+title: Django Channels
+date: 2017-10-10 11:47:14
+tags: 
+- Django
+- Python
+---
+
+
 # Django Channels
 
 ## Introduction
@@ -339,3 +348,4 @@ This is particularly annoying if you’re storing things in the session in the o
 Channels has a solution - the `enforce_ordering` decorator. All WebSockets messages contain an `order` key, and this decorator uses that to make sure that messages are consumed in the right order. In addition, the `connect` message blocks the socket opening until it’s responded to, so you are always guaranteed that `connect` will run before any `receives` even without the decorator.
 
 There’s a high cost to using `enforce_ordering`, which is why it’s an optional decorator.
+

@@ -1,6 +1,7 @@
 ---
 
 title: pixhawk与raspberryPI连接教程
+date: 2017-10-20 11:47:14
 tags: rpi3b
 categories: Linux
 

@@ -1,5 +1,6 @@
 ---
 title: Linux Kernel中的双向链表
+date: 2017-10-20 11:47:14
 tags:
 - Linux
 - 数据结构

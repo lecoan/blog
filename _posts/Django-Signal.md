@@ -1,3 +1,11 @@
+---
+title: Django中的Signal
+date: 2017-10-10 11:47:14
+tags: 
+- Django
+- Python
+---
+
 # Django - Signal
 
 Django 提供一个“信号分发器”，允许解耦的应用在框架的其它地方发生操作时会被通知到

@@ -1,3 +1,11 @@
+---
+title: Django中的表单
+date: 2017-10-10 11:47:14
+tags: 
+- Django
+- Python
+---
+
 #  Django - form
 
 ## HTML - form
