@@ -145,7 +145,7 @@ block extends
 - `"` (双引号)会转换为 `&quot;`
 - `&` 会转换为 `&amp;`
 
-#### 对于单个变量[¶](http://usyiyi.cn/documents/Django_111/ref/templates/language.html#for-individual-variables)
+#### 对于单个变量
 
 使用[`safe`](http://usyiyi.cn/documents/Django_111/ref/templates/builtins.html#std:templatefilter-safe)过滤器来关闭独立变量上的自动转义：
 

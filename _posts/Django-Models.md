@@ -517,7 +517,7 @@ class Ox(models.Model):
 
 `QuerySets` 是惰性执行的 —— 创建[`QuerySet`](http://python.usyiyi.cn/documents/Django_111/ref/models/querysets.html#django.db.models.query.QuerySet)不会带来任何数据库的访问。 你可以将过滤器保持一整天，直到[`QuerySet`](http://python.usyiyi.cn/documents/Django_111/ref/models/querysets.html#django.db.models.query.QuerySet) 需要*求值*时，Django 才会真正运行这个查询。
 
-### 使用`get()`检索单个对象[¶](http://python.usyiyi.cn/documents/Django_111/topics/db/queries.html#retrieving-a-single-object-with-get)
+### 使用`get()`检索单个对象
 
 [`filter()`](http://python.usyiyi.cn/documents/Django_111/ref/models/querysets.html#django.db.models.query.QuerySet.filter) 始终给你一个[`QuerySet`](http://python.usyiyi.cn/documents/Django_111/ref/models/querysets.html#django.db.models.query.QuerySet)，即使只有一个对象满足查询条件 —— 这种情况下，[`QuerySet`](http://python.usyiyi.cn/documents/Django_111/ref/models/querysets.html#django.db.models.query.QuerySet)将只包含一个元素。
 
