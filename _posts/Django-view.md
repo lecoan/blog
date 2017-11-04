@@ -1,3 +1,11 @@
+---
+title: Django中的View
+date: 2017-10-10 11:47:14
+tags: 
+- Django
+- Python
+---
+
 # Django - view - urls
 
 下面是Django 系统决定执行哪个Python 代码遵循的算法：
@@ -10,6 +18,7 @@
 
 4. 一旦正则表达式匹配，Django将导入并调用给定的视图，该视图是一个简单的Python函数（或基于类的[class-based view](http://usyiyi.cn/documents/Django_111/topics/class-based-views/index.html)）。
 
+<!--more-->
     
 
    视图将获得如下参数:

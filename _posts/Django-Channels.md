@@ -18,6 +18,8 @@ Channels extends Django to add [a new layer](https://channels.readthedocs.io/en/
 - WebSocket handling, in a way very [similar to normal views](https://channels.readthedocs.io/en/stable/getting-started.html#websocket-example)
 - Background tasks, running in the same servers as the rest of Django
 
+<!--more-->
+
 ### How?
 
 It separates Django into two process types:

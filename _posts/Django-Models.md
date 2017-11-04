@@ -23,7 +23,7 @@ CREATE TABLE myapp_person (
     "last_name" varchar(30) NOT NULL
 );
 ```
-
+<!--more-->
 - 这个表的名称`myapp_person`，是根据模型中的某些元数据自动生成的，也可以重写为别的名称。 详见[表的名称](http://python.usyiyi.cn/documents/Django_111/ref/models/options.html#table-names)。
 - `id` 字段是自动添加的，但这个行为可以被重写。 请参见[自动主键字段](http://python.usyiyi.cn/documents/Django_111/topics/db/models.html#automatic-primary-key-fields)。
 - 这个例子中的`CREATE TABLE` SQL 语句使用PostgreSQL 语法格式，要注意的是Django 会根据[settings文件](http://python.usyiyi.cn/documents/Django_111/topics/settings.html) 中指定的数据库类型来使用相应的SQL 语句。

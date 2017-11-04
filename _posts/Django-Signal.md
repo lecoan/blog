@@ -28,6 +28,8 @@ Django 提供[set of built-in signals](http://usyiyi.cn/documents/Django_111/ref
 
   Django建立或关闭HTTP 请求时发送。
 
+<!--more-->
+
 ## 监听Signal
 
 要接收信号，请使用[`Signal.connect()`](http://usyiyi.cn/documents/Django_111/topics/signals.html#django.dispatch.Signal.connect)方法注册

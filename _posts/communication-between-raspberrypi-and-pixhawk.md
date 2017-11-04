@@ -11,13 +11,14 @@ categories: Linux
 
 官方文档过于陈旧，一些内容已经过时，写这篇文档希望后来的人少走一些弯路
 
-<!--more-->
 
 ## STEP 1：接线
 
 ![../_images/RaspberryPi_Pixhawk_wiring1.jpg](http://ardupilot.org/dev/_images/RaspberryPi_Pixhawk_wiring1.jpg)
 
 按上图接线 （**注意：由于飞控和树莓派的接口型号不同，连接用的线需要专门定制**）
+
+<!--more-->
 
 ## STEP 2：更改飞控参数 
 
