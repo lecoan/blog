@@ -20,6 +20,8 @@ tags:
 - first_name
 - last_name
 
+<!--more-->
+
 ### 创建user
 
 创建users最直接的方法是使用[`create_user()`](http://usyiyi.cn/documents/Django_111/ref/contrib/auth.html#django.contrib.auth.models.UserManager.create_user)辅助函数：

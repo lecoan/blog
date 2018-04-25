@@ -1,5 +1,8 @@
 ---
-TAG:
+title: JavaScript基础
+date: 2017-9-10 11:47:14
+tags: 
+- javascript
 ---
 
 # JavaScript基础
